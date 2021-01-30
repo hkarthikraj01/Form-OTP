@@ -45,6 +45,20 @@ function codeverify() {
    } else {
      y.style.display = "none";
    }
+   
+   var a = document.getElementById("recaptcha-container");
+   if (a.style.display === "none") {
+     a.style.display = "block";
+   } else {
+     a.style.display = "none";
+   }
+        
+    var a = document.getElementById("myBtn");
+   if (a.style.display === "none") {
+     a.style.display = "block";
+   } else {
+     a.style.display = "none";
+   }     
         alert(error.message);
     });
 }
