@@ -65,7 +65,12 @@ btn.onclick = function() {
       coderesult=confirmationResult;
       console.log(coderesult);
     
- 
+      var y = document.getElementById("ve");
+   if (y.style.display === "none") {
+     y.style.display = "block";
+   } else {
+     y.style.display = "none";
+   }
       alert("Message sent");
   }).catch(function (error) {
      document.getElementById("phone").readOnly = false;
@@ -73,19 +78,6 @@ btn.onclick = function() {
   });
 
   modal.style.display = "block";
-}
-
-function codeverify() {
-  var code=document.getElementById('verificationCode').value;
-  coderesult.confirm(code).then(function (result) {
-    modal.style.display = "none";
-      alert("Successfully registered");
-      var user=result.user;
-      console.log(user);
-  }).catch(function (error) {
-      alert(error.message);
-     document.getElementById("phone").readOnly = false;
-  });
 }
 
 btc.onclick = function() {
