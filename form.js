@@ -41,7 +41,7 @@ function phoneAuth() {
 function codeverify() {
     var code=document.getElementById('verificationCode').value;
     coderesult.confirm(code).then(function (result) {
-        modal.style.display = "none";
+       
        var x = document.getElementById("recaptcha-container");
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -54,7 +54,9 @@ function codeverify() {
    } else {
      y.style.display = "none";
    }
+         modal.style.display = "none";
         alert("Successfully registered");
+        
         var user=result.user;
         console.log(user);
     }).catch(function (error) {
