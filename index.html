@@ -70,6 +70,7 @@ btn.onclick = function() {
     y.style.display = "none";
   }
   }).catch(function (error) {
+     document.getElementById("phone").readOnly = false;
       alert(error.message);
   });
 
