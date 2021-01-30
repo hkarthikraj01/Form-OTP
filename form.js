@@ -53,11 +53,11 @@ function codeverify() {
      a.style.display = "none";
    }
         
-    var a = document.getElementById("myBtn");
-   if (a.style.display === "none") {
-     a.style.display = "block";
+    var b = document.getElementById("myBtn");
+   if (b.style.display === "none") {
+     b.style.display = "block";
    } else {
-     a.style.display = "none";
+     b.style.display = "none";
    }     
         alert(error.message);
     });
