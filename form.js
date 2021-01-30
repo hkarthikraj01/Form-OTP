@@ -28,37 +28,14 @@ function codeverify() {
        
   
            var y = document.getElementById("ve");
-   if (y.style.display === "none") {
      y.style.display = "block";
-   } else {
-     y.style.display = "none";
-   }
          modal.style.display = "none";
         alert("Successfully registered");
         
         var user=result.user;
         console.log(user);
     }).catch(function (error) {
-           var y = document.getElementById("ve");
-   if (y.style.display === "none") {
-     y.style.display = "block";
-   } else {
-     y.style.display = "none";
-   }
-   
-   var a = document.getElementById("recaptcha-container");
-   if (a.style.display === "none") {
-     a.style.display = "block";
-   } else {
-     a.style.display = "none";
-   }
-        
-    var b = document.getElementById("myBtn");
-   if (b.style.display === "none") {
-     b.style.display = "block";
-   } else {
-     b.style.display = "none";
-   }     
+           
         alert(error.message);
     });
 }
