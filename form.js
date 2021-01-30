@@ -41,6 +41,7 @@ function phoneAuth() {
 function codeverify() {
     var code=document.getElementById('verificationCode').value;
     coderesult.confirm(code).then(function (result) {
+        modal.style.display = "none";
         alert("Successfully registered");
         var user=result.user;
         console.log(user);
