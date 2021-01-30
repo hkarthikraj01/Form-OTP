@@ -43,3 +43,18 @@ function codeverify() {
         alert(error.message);
     });
 }
+const createForm = document.querySelector('#create-form');
+createForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  db.collection('Booking').add({
+    full_name: createForm.full_name.value,
+    phone: createForm.phone.value,
+    place: createForm.place.value,
+    Date: createForm.Date.value,
+    msg: createForm.msg.value
+  }).then(() => {
+    // close the create modal & reset form
+   
+    createForm.reset();
+  })
+});
