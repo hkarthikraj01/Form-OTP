@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<h2>Phone OTP</h2>
+
+<input type="tel" name="your_phone" id="phone" placeholder="Your Phone Number" value="+91"   pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="input-text" required>
+<div id="recaptcha-container" ></div>
+<button id="myBtn">Send code</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="wrapper">
+      <div id="dialog">
+        <!--button class="close">×</button-->
+        <h3>Please enter the 6-digit verification code we sent via SMS:</h3>
+        <div id="form">
+          <input
+            class="mobile-verify"
+            type="text"
+            maxlength="1"
+            size="1"
+            min="0"
+            max="9"
+            pattern="[0-9]{1}"
+          />
+
+          <input
+            class="mobile-verify"
+            type="text"
+            maxlength="1"
+            size="1"
+            min="0"
+            max="9"
+            pattern="[0-9]{1}"
+          />
+          <input
+            class="mobile-verify"
+            type="text"
+            maxlength="1"
+            size="1"
+            min="0"
+            max="9"
+            pattern="[0-9]{1}"
+          />
+          <input
+            class="mobile-verify"
+            type="text"
+            maxlength="1"
+            size="1"
+            min="0"
+            max="9"
+            pattern="[0-9]{1}"
+          />
+          <input
+            class="mobile-verify"
+            type="text"
+            maxlength="1"
+            size="1"
+            min="0"
+            max="9"
+            pattern="[0-9]{1}"
+          />
+          <input
+            class="mobile-verify"
+            type="text"
+            maxlength="1"
+            size="1"
+            min="0"
+            max="9"
+            pattern="[0-9]{1}"
+          />
+        </div>
+        <button class="btn btn-primary btn-embossed" onclick="codeverify()">Verify</button>
+
+        <div>
+          Didn't receive the code?<br/>
+          <button id="myBtc">Send code again</button><br />
+          <a onclick="myFunctio()" style="color: red;">Change phone number</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+var btc = document.getElementById("myBtc");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  document.getElementById("phone").readOnly = true;
+  var number=document.getElementById('phone').value;
+
+  firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
+      //s is in lowercase
+      window.confirmationResult=confirmationResult;
+      coderesult=confirmationResult;
+      console.log(coderesult);
+      alert("Message sent");
+  }).catch(function (error) {
+      alert(error.message);
+  });
+
+  modal.style.display = "block";
+}
+
+function codeverify() {
+  var code=document.getElementById('verificationCode').value;
+  coderesult.confirm(code).then(function (result) {
+      alert("Successfully registered");
+      var user=result.user;
+      console.log(user);
+      modal.style.display = "none";
+  }).catch(function (error) {
+      alert(error.message);
+      modal.style.display = "none";
+  });
+}
+
+btc.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+   
+   modal.style.display = "none";
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+function phoneAuth() {
+  //get the number
+  //var n=document.getElementById('phone').value;
+ 
+}
+function myFunction() {
+  document.getElementById("phone").readOnly = true;
+}
+function myFunctio() {
+  document.getElementById("phone").readOnly = false;
+  modal.style.display = "none";
+}
+var allElements = document.querySelectorAll(".mobile-verify");
+      var i;
+      for (i = 0; i < allElements.length; i++) {
+        var el = allElements[i];
+        el.addEventListener("keypress", function () {
+          this.nextSibling.nextSibling.focus();
+        });
+      }
+</script>
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+  <script src="form.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="NumberAuthentication.js" type="text/javascript"></script>
+</body>
+</html>
