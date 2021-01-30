@@ -61,6 +61,12 @@ btn.onclick = function() {
       coderesult=confirmationResult;
       console.log(coderesult);
       alert("Message sent");
+    var x = document.getElementById("recaptcha-container");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
   }).catch(function (error) {
       alert(error.message);
   });
