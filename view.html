@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    </head>
+    <body>
+   <h1>User List</h1>
+    
+    <div class="content">
+              <ul id="user-list"></ul>
+    </div>
+
+    <script>
+    var config = {
+    apiKey: "AIzaSyC-pKtCM2VQKsxnO0zCU0m7OdNj7W0Zr7c",
+    authDomain: "authfirebase-2533f.firebaseapp.com",
+    databaseURL: "https://authfirebase-2533f.firebaseio.com",
+    projectId: "authfirebase-2533f"
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true }); 
+    </script>
+    </body>
+</html>
+
+<script>
+const userList = document.querySelector('#user-list');
+
+function renderuser(doc){
+    let li      = document.createElement('li');
+    let Name    = document.createElement('span');
+    let Phone   = document.createElement('span');
+    let Place   = document.createElement('span');
+    let Date    = document.createElement('span');
+    let Message = document.createElement('span');
+
+     li.setAttribute('data-id', doc.id);
+     Name.textContent = "Name :"+doc.data().full_name;
+     Phone.textContent = "Phone :"+doc.data().phone;
+     Place.textContent = "Place :"+doc.data().place;
+     Date.textContent = "Date :"+doc.data().Date;
+     Message.textContent = "Message :"+doc.data().msg;
+    
+
+    li.appendChild(full_name);
+    li.appendChild(phone);
+     li.appendChild(place);
+    li.appendChild(date);
+    li.appendChild(msg);
+
+    userList.appendChild(li);
+}
+
+db.collection('User-info').get().then(snapshot => {
+    snapshot.docs.forEach(doc => {
+        renderuser(doc);
+    });
+});
+</script>
