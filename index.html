@@ -50,7 +50,7 @@ var btc = document.getElementById("myBtc");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal  myBtn
 btn.onclick = function() {
   document.getElementById("phone").readOnly = true;
   var number=document.getElementById('phone').value;
@@ -61,6 +61,13 @@ btn.onclick = function() {
       coderesult=confirmationResult;
       console.log(coderesult);
       alert("Message sent");
+    
+       var y = document.getElementById("myBtn");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+  } else {
+    y.style.display = "none";
+  }
     var x = document.getElementById("recaptcha-container");
   if (x.style.display === "none") {
     x.style.display = "block";
