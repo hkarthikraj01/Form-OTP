@@ -29,24 +29,24 @@ const userList = document.querySelector('#user-list');
 
 function renderuser(doc){
     let li      = document.createElement('li');
-    let Name    = document.createElement('span');
-    let Phone   = document.createElement('span');
-    let Place   = document.createElement('span');
+    let full_name    = document.createElement('span');
+    let phone   = document.createElement('span');
+    let place   = document.createElement('span');
     let Date    = document.createElement('span');
-    let Message = document.createElement('span');
+    let msg = document.createElement('span');
 
      li.setAttribute('data-id', doc.id);
-     Name.textContent = "Name :"+doc.data().full_name;
-     Phone.textContent = "Phone :"+doc.data().phone;
-     Place.textContent = "Place :"+doc.data().place;
+     full_name.textContent = "Name :"+doc.data().full_name;
+     phone.textContent = "Phone :"+doc.data().phone;
+     place.textContent = "Place :"+doc.data().place;
      Date.textContent = "Date :"+doc.data().Date;
-     Message.textContent = "Message :"+doc.data().msg;
+     msg.textContent = "Message :"+doc.data().msg;
     
 
     li.appendChild(full_name);
     li.appendChild(phone);
-     li.appendChild(place);
-    li.appendChild(date);
+    li.appendChild(place);
+    li.appendChild(Date);
     li.appendChild(msg);
 
     userList.appendChild(li);
