@@ -71,13 +71,12 @@ btn.onclick = function() {
 function codeverify() {
   var code=document.getElementById('verificationCode').value;
   coderesult.confirm(code).then(function (result) {
+    modal.style.display = "none";
       alert("Successfully registered");
       var user=result.user;
       console.log(user);
-      modal.style.display = "none";
   }).catch(function (error) {
       alert(error.message);
-      modal.style.display = "none";
   });
 }
 
