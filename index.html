@@ -65,21 +65,9 @@ btn.onclick = function() {
       window.confirmationResult=confirmationResult;
       coderesult=confirmationResult;
       console.log(coderesult);
-    
-      var y = document.getElementById("ve");
-   if (y.style.display === "none") {
-     y.style.display = "block";
-   } else {
-     y.style.display = "none";
-   }
       alert("Message sent");
   }).catch(function (error) {
-         var y = document.getElementById("ve");
-   if (y.style.display === "none") {
-     y.style.display = "block";
-   } else {
-     y.style.display = "none";
-   }
+       
      document.getElementById("phone").readOnly = false;
       alert(error.message);
   });
@@ -98,7 +86,7 @@ span.onclick = function() {
    
    modal.style.display = "none";
    document.getElementById("phone").readOnly = false;
-     var y = document.getElementById("recaptcha-container");
+
   //   y.style.display = "block";
 
 }
