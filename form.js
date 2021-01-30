@@ -39,6 +39,12 @@ function codeverify() {
         var user=result.user;
         console.log(user);
     }).catch(function (error) {
+           var y = document.getElementById("ve");
+   if (y.style.display === "none") {
+     y.style.display = "block";
+   } else {
+     y.style.display = "none";
+   }
         alert(error.message);
     });
 }
