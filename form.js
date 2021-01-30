@@ -46,7 +46,7 @@ function codeverify() {
 const form = document.querySelector('#create-form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('cafes').add({
+    db.collection('User-info').add({
     full_name: form.full_name.value,
     phone: form.phone.value,
     place: form.place.value,
