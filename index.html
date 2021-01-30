@@ -9,6 +9,10 @@
 <h2>Phone OTP</h2>
 
 <input type="tel" name="your_phone" id="phone" placeholder="Your Phone Number" value="+91"   pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="input-text" required>
+  <span class="fa fa-stack fa-lg" id="ve" style="display: none;">
+      <i class="fa fa-certificate fa-stack-1x" style="font-size:25px;color: green" ></i>
+      <i class="fa fa-check fa-stack-1x fa-inverse" style="font-size:13px"></i>
+  </span>
 <div id="recaptcha-container" ></div>
 <button id="myBtn">Send code</button>
 
@@ -60,9 +64,14 @@ btn.onclick = function() {
       window.confirmationResult=confirmationResult;
       coderesult=confirmationResult;
       console.log(coderesult);
-      alert("Message sent");
     
-       var y = document.getElementById("recaptcha-container");
+    var x = document.getElementById("ve");
+   if (x.style.display === "none") {
+     x.style.display = "block";
+   } else {
+     x.style.display = "none";
+   }
+      alert("Message sent");
   }).catch(function (error) {
      document.getElementById("phone").readOnly = false;
       alert(error.message);
