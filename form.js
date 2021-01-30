@@ -42,12 +42,7 @@ function codeverify() {
     var code=document.getElementById('verificationCode').value;
     coderesult.confirm(code).then(function (result) {
        
-       var x = document.getElementById("recaptcha-container");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+  
            var y = document.getElementById("ve");
    if (y.style.display === "none") {
      y.style.display = "block";
