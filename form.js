@@ -27,9 +27,13 @@ function codeverify() {
     coderesult.confirm(code).then(function (result) {
        
   
-           var y = document.getElementById("ve");
-     y.style.display = "block";
-         modal.style.display = "none";
+        var y = document.getElementById("ve");
+        y.style.display = "block";
+        var a = document.getElementById("recaptcha-container");
+        var b = document.getElementById("myBtn");
+         a.style.display = "none";
+         b.style.display = "none";
+        modal.style.display = "none";
         alert("Successfully registered");
         
         var user=result.user;
