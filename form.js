@@ -43,18 +43,20 @@ function codeverify() {
         alert(error.message);
     });
 }
-const createForm = document.querySelector('#create-form');
-createForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  db.collection('Booking').add({
-    full_name: createForm.full_name.value,
-    phone: createForm.phone.value,
-    place: createForm.place.value,
-    Date: createForm.Date.value,
-    msg: createForm.msg.value
-  }).then(() => {
-    // close the create modal & reset form
-   
-    createForm.reset();
-  })
+const form = document.querySelector('#create-form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('cafes').add({
+    full_name: form.full_name.value,
+    phone: form.phone.value,
+    place: form.place.value,
+    Date: form.Date.value,
+    msg: form.msg.value
+    });
+    form.full_name.value = '';
+    form.phone.value= '';
+    form.place.value= '';
+    form.Date.value= '';
+    form.msg.value= '';
 });
+
