@@ -42,6 +42,12 @@ function codeverify() {
     var code=document.getElementById('verificationCode').value;
     coderesult.confirm(code).then(function (result) {
         modal.style.display = "none";
+        var x = document.getElementById("recaptcha-container");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
         alert("Successfully registered");
         var user=result.user;
         console.log(user);
@@ -50,6 +56,9 @@ function codeverify() {
     });
 }
 //const auth = firebase.auth();
+
+  
+
 
 //auth.languageCode = 'DE_de';
 const resetPassword = document.querySelector('#resetPassword');
