@@ -63,12 +63,6 @@ btn.onclick = function() {
       alert("Message sent");
     
        var y = document.getElementById("recaptcha-container");
-    
-  /*if (y.style.display === "none") {
-    y.style.display = "block";
-  } else*/ {
-    y.style.display = "none";
-  }
   }).catch(function (error) {
      document.getElementById("phone").readOnly = false;
       alert(error.message);
