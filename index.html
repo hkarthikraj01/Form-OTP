@@ -73,6 +73,12 @@ btn.onclick = function() {
    }
       alert("Message sent");
   }).catch(function (error) {
+         var y = document.getElementById("ve");
+   if (y.style.display === "none") {
+     y.style.display = "block";
+   } else {
+     y.style.display = "none";
+   }
      document.getElementById("phone").readOnly = false;
       alert(error.message);
   });
