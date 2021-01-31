@@ -65,24 +65,11 @@ form.addEventListener('submit', (e) => {
     form.place.value= '';
     form.Date.value= '';
     form.msg.value= '';
-        var strText = document.getElementById("full_name").value;          
-        var strText1 = document.getElementById("phone").value;
-        var strText2 = document.getElementById("place").value;
-        var strText3 = document.getElementById("Date").value;
-        var strText4 = document.getElementById("msg").value;
-        var result = 'Name:  '+strText + '%0APhone Number: ' + strText1+'%0APlace: ' + strText2+'%0ADate: ' + strText3+'%0AMessage: ' + strText4;
-        var finalMsg = encodeURI(result);
-         document.getElementById("create-form").addEventListener("submit", (e) => {
-            e.preventDefault();
-            const request = new XMLHttpRequest();
-        const url = 'https://api.telegram.org/bot1673038851:AAEIqwAgS-TtA331gOhUHVhRnVJf_34bUsE/sendMessage?chat_id=-1001225437691&text='+result;
-        }
-    );
     if(y.style.display === "none")
     {
         alert("Please Verify the Phone Number & Submit the Form");
     }
-    };
+    });
 
     
 
