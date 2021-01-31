@@ -81,7 +81,9 @@ form.addEventListener('submit', (e) => {
     if(y.style.display === "none")
     {
         alert("Please Verify the Phone Number & Submit the Form");
-    }
+    }});
+
+    
 });
 
 
