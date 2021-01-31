@@ -37,7 +37,6 @@ form.addEventListener('submit', (e) => {
         });    
         
     alert("Thank For Register");
-    createForm.reset();
     }
     
     if(y.style.display === "none")
