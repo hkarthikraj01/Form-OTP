@@ -31,33 +31,11 @@
                                                              
 </form>
   
-  
-  
-  
-  
-  
-  
-  
-  
-<!--h2>Phone OTP</h2>
-
-<input type="tel" name="your_phone" id="phone" placeholder="Your Phone Number" value="+91"   pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="input-text" required>
-  <span class="fa fa-stack fa-lg" id="ve" style="display: none;">
-      <i class="fa fa-certificate fa-stack-1x" style="font-size:25px;color: green" ></i>
-      <i class="fa fa-check fa-stack-1x fa-inverse" style="font-size:13px"></i>
-  </span>
-<div id="recaptcha-container" ></div>
-<button id="myBtn">Send code</button>
-
-< The Modal -->
 <div id="myModal" class="modal">
-
-  <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
     <div id="wrapper">
       <div id="dialog">
-        <!--button class="close">×</button-->
         <h3>Please enter the 6-digit verification code we sent via SMS:</h3>
         <div id="form">
          <input type="text" id="verificationCode" placeholder="Enter verification code" class="input-text" required>
@@ -76,24 +54,15 @@
 </div>
 
 <script>
-// Get the modal
 var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-
 var btc = document.getElementById("myBtc");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal  myBtn
 btn.onclick = function() {
   document.getElementById("phone").readOnly = true;
   var number=document.getElementById('phone').value;
 
   firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
-      //s is in lowercase
       window.confirmationResult=confirmationResult;
       coderesult=confirmationResult;
       console.log(coderesult);
@@ -109,30 +78,15 @@ btn.onclick = function() {
 
 btc.onclick = function() {
   modal.style.display = "none";
-     var y = document.getElementById("recaptcha-container");
- //    y.style.display = "block";
 }
-
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-   
-   modal.style.display = "none";
+    modal.style.display = "none";
    document.getElementById("phone").readOnly = false;
-
-  //   y.style.display = "block";
-
 }
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
-function phoneAuth() {
-  //get the number
-  //var n=document.getElementById('phone').value;
- 
 }
 function myFunction() {
   document.getElementById("phone").readOnly = true;
