@@ -82,7 +82,7 @@ form.addEventListener('submit', (e) => {
     {
         alert("Please Verify the Phone Number & Submit the Form");
     }
-    });
+    };
 
     
 
