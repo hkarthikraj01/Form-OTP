@@ -65,6 +65,7 @@ form.addEventListener('submit', (e) => {
     form.place.value= '';
     form.Date.value= '';
     form.msg.value= '';
+        alert("Thank For Register");
 }
     if(y.style.display === "none")
     {
