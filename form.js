@@ -65,6 +65,7 @@ form.addEventListener('submit', (e) => {
     form.place.value= '';
     form.Date.value= '';
     form.msg.value= '';
+}
     if(y.style.display === "none")
     {
         alert("Please Verify the Phone Number & Submit the Form");
