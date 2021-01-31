@@ -61,5 +61,10 @@ form.addEventListener('submit', (e) => {
     form.place.value= '';
     form.Date.value= '';
     form.msg.value= '';
-    }});
+    }
+    else
+    {
+        alert("Please Verify the Phone Number & Submit the Form");
+    }
+});
 
