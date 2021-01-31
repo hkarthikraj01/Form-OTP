@@ -4,7 +4,7 @@
         var strText2 = document.getElementById("place").value;
         var strText3 = document.getElementById("Date").value;
         var strText4 = document.getElementById("msg").value;
-        var result = 'Name:  '+strText + '%0APhone Number: ' + strText1+'%0APickup Location: ' + strText2+'%0APickup Time: ' + strText3+'%0ADrop Location: ' + strText4+'%0ACars: ' + strText5;
+        var result = 'Name:  '+strText + '%0ANumber: ' + strText1+'%0APlace: ' + strText2+'%0ADate: ' + strText3+'%0AMessage: ' + strText4;
         var finalMsg = encodeURI(result);
         document.getElementById("create-form").addEventListener("submit", (e) => {
         e.preventDefault();
@@ -14,5 +14,5 @@
         request.open("post", url);
         request.send();
         }
-        });
+        }); 
     }
