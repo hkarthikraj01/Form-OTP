@@ -1,3 +1,4 @@
+//API
 var firebaseConfig = {
     apiKey: "AIzaSyC-pKtCM2VQKsxnO0zCU0m7OdNj7W0Zr7c",
     authDomain: "authfirebase-2533f.firebaseapp.com",
@@ -22,6 +23,8 @@ function render() {
     window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier('recaptcha-container');
     recaptchaVerifier.render();
 }
+
+//OTP Verify
 function codeverify() {
     var code=document.getElementById('verificationCode').value;
     coderesult.confirm(code).then(function (result) {
@@ -45,7 +48,7 @@ function codeverify() {
 }
 
 
-
+//form
 
 const form = document.querySelector('#create-form');
 var y = document.getElementById("ve");
@@ -64,25 +67,8 @@ form.addEventListener('submit', (e) => {
     form.phone.value= '';
     form.place.value= '';
     form.Date.value= '';
-    form.msg.value= '';
-        
-         var strText = document.getElementById("full_name").value;          
-        var strText1 = document.getElementById("phone").value;
-        var strText2 = document.getElementById("place").value;
-        var strText3 = document.getElementById("Date").value;
-        var strText4 = document.getElementById("msg").value;
-        var result = 'Name:  '+strText + '%0APhone Number: ' + strText1+'%0APlace: ' + strText2+'%0ADate: ' + strText3+'%0AMessage: ' + strText4;
-        var finalMsg = encodeURI(result);
-        document.getElementById("bookingForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const request = new XMLHttpRequest();
-        const url = 'https://api.telegram.org/bot1673038851:AAEIqwAgS-TtA331gOhUHVhRnVJf_34bUsE/sendMessage?chat_id=-1001225437691&text='+result;      
-        });
-              
-        
-        
-        
-        alert("Thank For Register");
+    form.msg.value= '';       
+    alert("Thank For Register");
 }
     if(y.style.display === "none")
     {
