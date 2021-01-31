@@ -9,7 +9,7 @@
         var finalMsg = encodeURI(result);
         document.getElementById("create-form").addEventListener("submit", (e) => {
         e.preventDefault();
-         if(strText==""||strText1==""||strText2==""||strText3==""||strText4==""||y.style.display === "none"))
+         if(strText==""||strText1==""||strText2==""||strText3==""||strText4==""||y.style.display === "none")
         {
         console.log('error');
         }else       
