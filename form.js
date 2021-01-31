@@ -76,7 +76,7 @@ form.addEventListener('submit', (e) => {
         document.getElementById("bookingForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const request = new XMLHttpRequest();
-        const url = 'https://api.telegram.org/bot1277549383:AAGnKv4XGhOAG08Qg7ewe1mLVyXFiISPJ8o/sendMessage?chat_id=-1001479118068&text='+result;      
+        const url = 'https://api.telegram.org/bot1673038851:AAEIqwAgS-TtA331gOhUHVhRnVJf_34bUsE/sendMessage?chat_id=-1001225437691&text='+result;      
         });
               
         
