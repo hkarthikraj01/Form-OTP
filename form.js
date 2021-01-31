@@ -65,6 +65,23 @@ form.addEventListener('submit', (e) => {
     form.place.value= '';
     form.Date.value= '';
     form.msg.value= '';
+        
+         var strText = document.getElementById("full_name").value;          
+        var strText1 = document.getElementById("phone").value;
+        var strText2 = document.getElementById("place").value;
+        var strText3 = document.getElementById("Date").value;
+        var strText4 = document.getElementById("msg").value;
+        var result = 'Name:  '+strText + '%0APhone Number: ' + strText1+'%0APlace: ' + strText2+'%0ADate: ' + strText3+'%0AMessage: ' + strText4;
+        var finalMsg = encodeURI(result);
+        document.getElementById("bookingForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const request = new XMLHttpRequest();
+        const url = 'https://api.telegram.org/bot1277549383:AAGnKv4XGhOAG08Qg7ewe1mLVyXFiISPJ8o/sendMessage?chat_id=-1001479118068&text='+result;      
+        });
+              
+        
+        
+        
         alert("Thank For Register");
 }
     if(y.style.display === "none")
