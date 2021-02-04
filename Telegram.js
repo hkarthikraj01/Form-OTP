@@ -21,7 +21,7 @@
         request.send();
            var wnd = window.open("https://www.fast2sms.com/dev/bulk?authorization=YbdnyBCkGrxZSeTl0vwMqmEastOQLRFPcVpXW1J9Huj6DIoKAhxMguvAoKnTp3FzymwcksZU0GJqhbeI&sender_id=FSTSMS&message=%0AYour Booking Request Processing "+result+"&language=english&route=p&numbers="+strText1);
     if(wnd){
-            setTimeout(function () { wnd.close();}, 1);
+            setTimeout(function () { wnd.close();}, 400);
     }
       //  window.open("https://www.fast2sms.com/dev/bulk?authorization=YbdnyBCkGrxZSeTl0vwMqmEastOQLRFPcVpXW1J9Huj6DIoKAhxMguvAoKnTp3FzymwcksZU0GJqhbeI&sender_id=FSTSMS&message=%0AYour Booking Request Processing "+result+"&language=english&route=p&numbers="+strText1);
             }
