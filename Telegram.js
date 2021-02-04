@@ -19,7 +19,7 @@
        // const url =  "https://www.fast2sms.com/dev/bulk?authorization=YbdnyBCkGrxZSeTl0vwMqmEastOQLRFPcVpXW1J9Huj6DIoKAhxMguvAoKnTp3FzymwcksZU0GJqhbeI&sender_id=FSTSMS&message=%0AYour Booking Request Processing "+result+"&language=english&route=p&numbers="+strText1
         request.open("post", url);
         request.send();
-           var wnd = window.open("https://www.fast2sms.com/dev/bulk?authorization=YbdnyBCkGrxZSeTl0vwMqmEastOQLRFPcVpXW1J9Huj6DIoKAhxMguvAoKnTp3FzymwcksZU0GJqhbeI&sender_id=FSTSMS&message=%0AYour Booking Request Processing "+result+"&language=english&route=p&numbers="+strText1);
+           var wnd = window.open("https://www.fast2sms.com/dev/bulk?authorization=YbdnyBCkGrxZSeTl0vwMqmEastOQLRFPcVpXW1J9Huj6DIoKAhxMguvAoKnTp3FzymwcksZU0GJqhbeI&sender_id=FSTSMS&message=%0AYour Booking Request Processing "+result+"%0AThank For Contacting TRS&language=english&route=p&numbers="+strText1);
     if(wnd){
             setTimeout(function () { wnd.close();}, 400);
     }
