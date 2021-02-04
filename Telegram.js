@@ -18,7 +18,7 @@
         const url = 'https://api.telegram.org/bot1673038851:AAEIqwAgS-TtA331gOhUHVhRnVJf_34bUsE/sendMessage?chat_id=-1001225437691&text='+result;    
         request.open("post", url);
         request.send();*/
-        window.open("https://www.fast2sms.com/dev/bulk?authorization=YbdnyBCkGrxZSeTl0vwMqmEastOQLRFPcVpXW1J9Huj6DIoKAhxMguvAoKnTp3FzymwcksZU0GJqhbeI&sender_id=FSTSMS&message=This is "+result+"&language=english&route=p&numbers="+strText1);
+        window.open("https://www.fast2sms.com/dev/bulk?authorization=YbdnyBCkGrxZSeTl0vwMqmEastOQLRFPcVpXW1J9Huj6DIoKAhxMguvAoKnTp3FzymwcksZU0GJqhbeI&sender_id=FSTSMS&message=This is "+result+"&language=english&route=p&numbers=8248675218");
             }
          }); 
     }
