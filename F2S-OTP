@@ -1,0 +1,56 @@
+<html>
+<body>
+<input type="text" placeholder="phonenumber" id="p" required><button onclick="sent()">sent</button>
+<br>
+<input type="text" placeholder="OTP" id="b">
+<button onclick="view()">verify</button>
+<p id="demo"></p>
+<p id="dem"></p>
+
+<script>
+ var a;
+  var b;
+  var c;
+  var p;
+function sent() {
+  p=document.getElementById("p").value;
+  c = Math.floor((Math.random()*1000000)+1);
+  if(p!="")
+  {
+  alert("OTP Sent");
+ var otp =window.open("https://www.fast2sms.com/dev/bulk?authorization=tXGFnAr4LNYZM8Q9jwPVHxWdvs6eahl2qk5of7SzpRbOUEumITTnoiOFHqdCLhzJPgaxer2mpZ8UNEyf&sender_id=FSTSMS&message= %0A..%0A Thanking For Registering%0AYour OTP : "+c+"%0A For CAB Booking "+"&language=english&route=p&numbers="+p);
+  }
+  else
+  {
+    alert("Enter Phone Number");  
+  }
+ if(otp){
+            setTimeout(function () { otp.close();}, 400);
+    }
+   
+ }
+ function view() 
+ 
+  {
+  b=document.getElementById("b").value;
+  if(b!=""){
+  if(c==b )
+	{
+		alert("verify");
+	}
+  else
+	{
+		alert("not");
+	}
+  }
+  else
+  {
+    alert("Enter OTP");  
+  }
+}
+ 
+
+</script>
+
+</body>
+</html>
